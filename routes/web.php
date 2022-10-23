@@ -14,20 +14,6 @@ use Illuminate\Http\Request;
 |
 */
  
-Route::post('/tokens/create', function (Request $request) {
-    $token = $request->user()->createToken($request->token_name);
-    dd($token);
-    return ['token' => $token->plainTextToken];
-});
-
-
-/* Route::get('{any}', function () {
-    return view('layouts.app');
-})->where('any', '.*'); */
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('{any}', function () {
+    return view('app');
+})->where('any', '.*');
